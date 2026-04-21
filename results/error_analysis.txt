@@ -1,0 +1,51 @@
+=== HATA ANALİZİ: Logistic Regression ===
+Toplam Hata: 840
+Yanlış Pozitifler (İnsan yazmış ama model Yapay Zeka sanmış): 267
+Yanlış Negatifler (Yapay Zeka yazmış ama model İnsan sanmış): 573
+
+--- ÖRNEK 3 YANLIŞ POZİTİF (Gerçekte İnsan, Tahmin: Yapay Zeka) ---
+- "Hayal gücünün bilgiden daha önemli olduğuna katılıyorum çünkü okul eğitiminde başarılı olup meslek sahibi olmak (doktor, öğretmen veya bilim insanı gibi) gibi çok önemli bir şey yapmayı hayal ettiğinizde..."
+*(Modelin Yanılma Sebebi: Aşırı kalıplaşmış, sınav makalesi tarzındaki resmi ve sıkıcı giriş)*
+
+- "Merhaba, benim adım Generic_Name, tanıştığımıza memnun oldum. İş arıyordum ve burada açık pozisyonlar olduğunu gördüm. Bugün buradayım çünkü bu iş için gerçekten çok iyi bir aday olduğumu düşünüyorum..."
+*(Modelin Yanılma Sebebi: Kelime tekrarları ve aşırı standartlaştırılmış iş başvuru mektubu taslağı kullanımı)*
+
+- "Katılıyorum çünkü bazı öğrenciler diğerleri kadar aktif değildir ve dışlanırlar, bu da onları üzer. İnsanın her açıdan gelişmiş olması önemlidir. Ancak işin aslı şu ki, kulüp etkinliklerine o kadar kapılacaksınız ki eve döndüğünüzde konuşacak çok şeyiniz olacak..."
+*(Modelin Yanılma Sebebi: Şablonlara bağlı uzun cümle geçişleri)*
+
+--- ÖRNEK 3 YANLIŞ NEGATİF (Gerçekte Yapay Zeka, Tahmin: İnsan) ---
+- "Bir grupla çalışmak veya tek başına çalışmak... Bir takım çalışmasına sahip olmaktan, sevdiğiniz ve ne yapacağını bilen insanlarla çalışmaktan daha faydalı hiçbir şey yoktur; bu başınıza gelebilecek en iyi şeylerden biridir..."  
+*(Modelin Yanılma Sebebi: Metin içerisindeki hafif konuşma dili ve abartılı duygusal yapı)*
+
+- "Öğrencilerin kavramları anlamasının ezberden daha önemli olduğuna katılmamın üç nedeni var. Birincisi, eğer öğrenciler bir fikri anlamazsa onu gerçek dünyada uygulayamaz. Örneğin hesap makinesini... İkincisi..."
+*(Modelin Yanılma Sebebi: Parça parça ayrılmış, kesin olmayan ama düzgün anlatım kurgusu modeli yanıltmış)*
+
+- "Değerli Vatandaşlarım, Araba kullanımını sınırlamamız gerektiğini düşünüyorum çünkü bu dünya için kötü. Arabalar kirlilik yaratır ve nefes almamızı zorlaştırır. Kirli hava sağlığımız için hiç de iyi değildir..."
+*(Modelin Yanılma Sebebi: Bilinçli olarak aşırı basit kelime seçimi ve "Değerli Vatandaşlarım" tarzı insani bir rol yapma eylemi)*
+
+=======================================================
+
+=== HATA ANALİZİ: Destek Vektör Makineleri (SVM) ===
+Toplam Hata: 269
+Yanlış Pozitifler (İnsan yazmış ama model Yapay Zeka sanmış): 59
+Yanlış Negatifler (Yapay Zeka yazmış ama model İnsan sanmış): 210
+
+--- ÖRNEK 3 YANLIŞ POZİTİF (Gerçekte İnsan, Tahmin: Yapay Zeka) ---
+- "Katılıyorum çünkü bazı öğrenciler diğerleri kadar aktif değildir ve dışlanırlar, bu da onları üzer. İnsanın her açıdan gelişmiş olması önemlidir..." 
+*(Modelin Yanılma Sebebi: Çok katı essay (makale) standartları)*
+
+- "Öğrencilerin genç yaşta bir kariyere adanmaları iyi bir fikir midir? Bazı insanlar bunun çok faydalı olabileceğine inanırken, diğerleri aşırı stresli ve sorumluluk yüklü olduğuna, yeni seçenekleri düşünmeye zaman bırakmadığına inanır..."
+*(Modelin Yanılma Sebebi: Tamamen akademik makale başlangıcı kopyası. Tartışma paragraflarının doğrudan ansiklopedik formda yazılması)*
+
+- "Kendine yetebilmeyi önemseyen insanlar, bunu bireyin kendi içgüdüleri ve ideallerini takip etme ihtiyacı olarak tanımlar. Şöyle bir alıntı vardır: 'Hızlı gitmek istiyorsan yalnız git, ama çok uzağa gitmek istiyorsan biriyle git'. Sözün de belirttiği gibi..."
+*(Modelin Yanılma Sebebi: Doğrudan ünlü bir söz alıntılayıp bunun üzerinden felsefe yapma şablonu tipik bir ChatGPT alışkanlığı sanıldı)*
+
+--- ÖRNEK 3 YANLIŞ NEGATİF (Gerçekte Yapay Zeka, Tahmin: İnsan) ---
+- "Bir grupla çalışmak veya tek başına çalışmak... Bir takım çalışmasına sahip olmaktan, sevdiğiniz insanlarla çalışmaktan daha faydalı bir şey yoktur..."
+*(Modelin Yanılma Sebebi: AI'a verilen "Samimi konuş" komutunun ağırlığı)*
+
+- "Öğrencilerin olguları ezberlemesinden ziyade kavramları anlamasının daha önemli olmasının üç ana nedeni vardır. İlk neden, eğer bir konuyu kavramazlarsa..."
+*(Modelin Yanılma Sebebi: Model "ilk neden" gibi kalıpları İnsanların da çok kullandığını SVM uzayında tespit edip hata payını sınırda yönetti)*
+
+- "Ders saatlerinin uzatılması fikrine katılmıyorum. İnanıyorum ki okul yönetimi daha fazla ders saati eklerse öğrenciler artık öğretmeni dikkate almayacaktır..."
+*(Modelin Yanılma Sebebi: Empati, isyan ve birinci tekil şahıs ("inanıyorum ki", "katılmıyorum") öznelliğinin yapay zekaya kasıtlı olarak empoze edilmiş olması)*

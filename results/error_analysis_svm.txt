@@ -1,0 +1,23 @@
+=== ERROR ANALYSIS: SVM ===
+Toplam Hata: 269
+False Positives (İnsan yazmış ama model AI sanmış): 59
+False Negatives (AI yazmış ama model İnsan sanmış): 210
+
+--- ÖRNEK 3 FALSE POSITIVE ---
+- I agree because some students are not as active as other students and get left out of things and that will make you sad and fell well left out. It is important to make sure you are well rounded. So you can achieve in life. But here is the catch you will be so caught up in youre club you wont have time to get on youre electronic devises and when you get home you will have so much to talk about .Instead of you coming home and youre parents asking you how school was now you would usely reply as sch...
+
+- Is an Good idea for students to commit a carer at a young AEE? Some people believe that choose a career at a young AEE can be beneficial for the students while other people believe choose a career at a young AEE is stressful and a be responsibility, you do not have enough time to think about new options, over the time students Gets new skills, and you have to be sure about what you really want. This is important because it is not easy for students have specifics aspirations and Good options of c...
+
+- People who value sedfrediance define it as the need for each individual to follow his or her own instincts and ideas. There is a quote that says, "If you want to go fast go by yourself, but if you want to far go with someone edge". As the quote says, I think that it's very important to have someone to guide us throughout the course of our dives. I agree that seeking for guidance from experts to make wise decisions can have a great impact in our dives. Experts and authorities can provide us with ...
+
+--- ÖRNEK 3 FALSE NEGATIVE ---
+-  Working with a group or working alone.
+
+Their is nothing more beneficial than to have a team work, having to work with people that you like, and the people that know what to do; is one of the best things that could ever happen to you. Now working alone gives you more benefits like, no one is going to steal your ideas or just copy what you do or write about which happens a lot when you are working with a team.
+
+Working with a group is more like teamwork, is more like people doing less, what I me...
+
+- There are three reasons why I agree that it is more important for students to understand ideas and concepts than it is for them to learn facts. The first reason is that if students do not understand an idea or concept, they will not be able to apply it in the real world. For example, if a student does not know how to use a calculator, he or she will be unable to solve a math problem. Second, students need to know what they are learning so that they can apply the knowledge to real world situation...
+
+-  I disagree with the idea of extending school hours. I believe that if the school board adds more hours to school, students will Hot pay much attention to the teacher or staff. Additionally, students may start disrespecting teachers because they have too many hours AHD they become too tired or start to fall asleep. I also think that teachers may become annoyed by students asking them why the school board added extra hours to school. Instead of adding extra hours to school, the school board shoul...
+

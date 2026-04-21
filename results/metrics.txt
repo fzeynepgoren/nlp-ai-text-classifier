@@ -1,0 +1,16 @@
+# 📊 Model Performans Metrikleri
+
+## 1. Lojistik Regresyon (Logistic Regression)
+* **Doğruluk (Accuracy):** %99.14
+* **Kesinlik (Precision - Macro Avg):** %99.14
+* **Duyarlılık (Recall - Macro Avg):** %99.14
+* **F1-Skoru (Macro Avg):** %99.14
+
+## 2. Destek Vektör Makineleri (LinearSVC)
+* **Doğruluk (Accuracy):** %99.72
+* **Kesinlik (Precision - Macro Avg):** %99.72
+* **Duyarlılık (Recall - Macro Avg):** %99.72
+* **F1-Skoru (Macro Avg):** %99.72
+
+## Karşılaştırma Özeti
+SVM, Lojistik Regresyon'u tüm metriklerde açık ara geride bırakmış ve özellikle İnsan elinden çıkan metinlere "Yapay Zeka" deme hatasını (Yanlış Pozitif - False Positive) minimuma indirmiştir.

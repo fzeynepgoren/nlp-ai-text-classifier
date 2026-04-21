@@ -1,0 +1,54 @@
+[nltk_data] Error loading stopwords: [Errno 32] Broken pipe
+Veri yükleniyor...
+Dataset boyutu: (487235, 2)
+Preprocessing yapılıyor...
+TF-IDF özellikleri çıkarılıyor...
+
+🔹 Logistic Regression eğitiliyor...
+
+==================================================
+Logistic Regression - Classification Report:
+==================================================
+              precision    recall  f1-score   support
+
+         0.0       0.99      1.00      0.99     61112
+         1.0       0.99      0.98      0.99     36335
+
+    accuracy                           0.99     97447
+   macro avg       0.99      0.99      0.99     97447
+weighted avg       0.99      0.99      0.99     97447
+
+Confusion Matrix:
+[[60845   267]
+ [  573 35762]]
+  → Grafik kaydedildi: results/figures/cm_logistic_regression.png
+  → Feature importance grafiği kaydedildi: results/figures/fi_logistic_regression.png
+  → Error analysis raporu kaydedildi: results/error_analysis_lr.txt
+
+🔹 SVM eğitiliyor...
+
+==================================================
+SVM - Classification Report:
+==================================================
+              precision    recall  f1-score   support
+
+         0.0       1.00      1.00      1.00     61112
+         1.0       1.00      0.99      1.00     36335
+
+    accuracy                           1.00     97447
+   macro avg       1.00      1.00      1.00     97447
+weighted avg       1.00      1.00      1.00     97447
+
+Confusion Matrix:
+[[61053    59]
+ [  210 36125]]
+  → Grafik kaydedildi: results/figures/cm_svm.png
+  → Feature importance grafiği kaydedildi: results/figures/fi_svm.png
+  → Error analysis raporu kaydedildi: results/error_analysis_svm.txt
+
+📊 Model Karşılaştırması:
+  Logistic Regression: 0.9914
+  SVM:                 0.9972
+  → Grafik kaydedildi: results/figures/model_comparison.png
+
+✅ Tüm grafikler results/figures/ klasörüne, error analysis dosyaları ise results/ klasörüne kaydedildi!
