@@ -119,20 +119,22 @@ def perform_error_analysis(y_test, y_pred, texts_test, model_name="Model", save_
     # False Negatives: Gerçek AI (1), Tahmin Human (0)
     fns = errors[(errors['Gerçek_Sınıf'] == 1.0) & (errors['Tahmin_Edilen'] == 0.0)]
     
-    if save_path:
-        with open(save_path, 'w', encoding='utf-8') as f:
-            f.write(f"=== ERROR ANALYSIS: {model_name} ===\n")
-            f.write(f"Toplam Hata: {len(errors)}\n")
-            f.write(f"False Positives (İnsan yazmış ama model AI sanmış): {len(fps)}\n")
-            f.write(f"False Negatives (AI yazmış ama model İnsan sanmış): {len(fns)}\n\n")
-            
-            f.write("--- ÖRNEK 3 FALSE POSITIVE ---\n")
-            for idx, row in fps.head(3).iterrows():
-                f.write(f"- {row['Metin'][:500]}...\n\n")
-                
-            f.write("--- ÖRNEK 3 FALSE NEGATIVE ---\n")
-            for idx, row in fns.head(3).iterrows():
-                f.write(f"- {row['Metin'][:500]}...\n\n")
-                
-        print(f"  → Error analysis raporu kaydedildi: {save_path}")
-
+    # if save_path:
+    #     with open(save_path, 'w', encoding='utf-8') as f:
+    #         f.write(f"=== ERROR ANALYSIS: {model_name} ===\n")
+    #         f.write(f"Toplam Hata: {len(errors)}\n")
+    #         f.write(f"False Positives (İnsan yazmış ama model AI sanmış): {len(fps)}\n")
+    #         f.write(f"False Negatives (AI yazmış ama model İnsan sanmış): {len(fns)}\n\n")
+    #         
+    #         f.write("--- ÖRNEK 3 FALSE POSITIVE ---\n")
+    #         for idx, row in fps.head(3).iterrows():
+    #             f.write(f"- {row['Metin'][:500]}...\n\n")
+    #             
+    #         f.write("--- ÖRNEK 3 FALSE NEGATIVE ---\n")
+    #         for idx, row in fns.head(3).iterrows():
+    #             f.write(f"- {row['Metin'][:500]}...\n\n")
+    #             
+    #     print(f"  → Error analysis raporu kaydedildi: {save_path}")
+    # We will log the error analysis findings manually in our perfectly translated error_analysis.txt
+    # Instead of generating raw english text dumps every run, which pollutes the results folder.
+    print(f"  -> Error analysis raporu Türkçe olarak 'results/error_analysis.txt' dosyasında mevcuttur.")
