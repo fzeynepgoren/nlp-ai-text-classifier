@@ -1,0 +1,16 @@
+=== 5-FOLD STRATIFIED CROSS-VALIDATION SONUÇLARI ===
+
+Logistic Regression:
+  Fold Skorları : ['0.9940', '0.9928', '0.9927', '0.9920', '0.9928']
+  Ortalama      : 0.9929
+  Std Sapma     : 0.0007
+  Min/Max       : 0.9920 / 0.9940
+
+SVM (LinearSVC):
+  Fold Skorları : ['0.9976', '0.9979', '0.9979', '0.9975', '0.9977']
+  Ortalama      : 0.9977
+  Std Sapma     : 0.0001
+  Min/Max       : 0.9975 / 0.9979
+
+YORUM: Eğer standart sapma düşükse (< 0.005) ve tüm fold skorları
+birbirine yakınsa, model overfitting YAPMIYOR demektir.

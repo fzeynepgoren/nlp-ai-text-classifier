@@ -5,6 +5,78 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+from sklearn.model_selection import cross_val_score, StratifiedKFold
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import LinearSVC
+
+
+def cross_validate_models(X, y, save_path=None):
+    """5-Fold Stratified Cross-Validation ile overfitting kontrolü.
+    Her katlamada sınıf oranları korunur (Stratified)."""
+    cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+
+    models = {
+        "Logistic Regression": LogisticRegression(max_iter=1000),
+        "SVM (LinearSVC)": LinearSVC(max_iter=2000),
+    }
+
+    print("\n" + "=" * 60)
+    print("  5-FOLD STRATIFIED CROSS-VALIDATION (Overfitting Kontrolü)")
+    print("=" * 60)
+
+    cv_results = {}
+    for name, model in models.items():
+        scores = cross_val_score(model, X, y, cv=cv, scoring='accuracy', n_jobs=1)
+        cv_results[name] = scores
+        print(f"\n  {name}:")
+        print(f"    Fold Skorları : {[f'{s:.4f}' for s in scores]}")
+        print(f"    Ortalama      : {scores.mean():.4f}")
+        print(f"    Std Sapma     : {scores.std():.4f}")
+        print(f"    Min/Max       : {scores.min():.4f} / {scores.max():.4f}")
+
+    # Cross-Validation sonuçlarını görselleştir
+    fig, ax = plt.subplots(figsize=(10, 5))
+    positions = []
+    labels = []
+    colors = ['#2196F3', '#FF5722']
+    for i, (name, scores) in enumerate(cv_results.items()):
+        bp = ax.boxplot(scores, positions=[i], widths=0.5, patch_artist=True,
+                        boxprops=dict(facecolor=colors[i], alpha=0.7),
+                        medianprops=dict(color='black', linewidth=2))
+        # Her fold skoru da nokta olarak göster
+        ax.scatter([i] * len(scores), scores, color='black', zorder=5, s=40, alpha=0.6)
+        positions.append(i)
+        labels.append(name)
+
+    ax.set_xticks(positions)
+    ax.set_xticklabels(labels)
+    ax.set_ylabel('Accuracy')
+    ax.set_title('5-Fold Stratified Cross-Validation Sonuçları')
+    ax.set_ylim(0.98, 1.002)
+    ax.grid(axis='y', alpha=0.3)
+    plt.tight_layout()
+
+    if save_path:
+        plt.savefig(save_path, dpi=150)
+        print(f"\n  → CV grafiği kaydedildi: {save_path}")
+    plt.close()
+
+    # Sonuçları dosyaya kaydet
+    if save_path:
+        txt_path = save_path.replace('.png', '.txt')
+        with open(txt_path, 'w', encoding='utf-8') as f:
+            f.write("=== 5-FOLD STRATIFIED CROSS-VALIDATION SONUÇLARI ===\n\n")
+            for name, scores in cv_results.items():
+                f.write(f"{name}:\n")
+                f.write(f"  Fold Skorları : {[f'{s:.4f}' for s in scores]}\n")
+                f.write(f"  Ortalama      : {scores.mean():.4f}\n")
+                f.write(f"  Std Sapma     : {scores.std():.4f}\n")
+                f.write(f"  Min/Max       : {scores.min():.4f} / {scores.max():.4f}\n\n")
+            f.write("YORUM: Eğer standart sapma düşükse (< 0.005) ve tüm fold skorları\n")
+            f.write("birbirine yakınsa, model overfitting YAPMIYOR demektir.\n")
+        print(f"  → CV raporu kaydedildi: {txt_path}")
+
+    return cv_results
 
 
 def evaluate(model, X_test, y_test, model_name="Model"):
@@ -119,22 +191,21 @@ def perform_error_analysis(y_test, y_pred, texts_test, model_name="Model", save_
     # False Negatives: Gerçek AI (1), Tahmin Human (0)
     fns = errors[(errors['Gerçek_Sınıf'] == 1.0) & (errors['Tahmin_Edilen'] == 0.0)]
     
-    # if save_path:
-    #     with open(save_path, 'w', encoding='utf-8') as f:
-    #         f.write(f"=== ERROR ANALYSIS: {model_name} ===\n")
-    #         f.write(f"Toplam Hata: {len(errors)}\n")
-    #         f.write(f"False Positives (İnsan yazmış ama model AI sanmış): {len(fps)}\n")
-    #         f.write(f"False Negatives (AI yazmış ama model İnsan sanmış): {len(fns)}\n\n")
-    #         
-    #         f.write("--- ÖRNEK 3 FALSE POSITIVE ---\n")
-    #         for idx, row in fps.head(3).iterrows():
-    #             f.write(f"- {row['Metin'][:500]}...\n\n")
-    #             
-    #         f.write("--- ÖRNEK 3 FALSE NEGATIVE ---\n")
-    #         for idx, row in fns.head(3).iterrows():
-    #             f.write(f"- {row['Metin'][:500]}...\n\n")
-    #             
-    #     print(f"  → Error analysis raporu kaydedildi: {save_path}")
-    # We will log the error analysis findings manually in our perfectly translated error_analysis.txt
-    # Instead of generating raw english text dumps every run, which pollutes the results folder.
-    print(f"  -> Error analysis raporu Türkçe olarak 'results/error_analysis.txt' dosyasında mevcuttur.")
+    if save_path:
+        with open(save_path, 'w', encoding='utf-8') as f:
+            f.write(f"=== ERROR ANALYSIS: {model_name} ===\n")
+            f.write(f"Toplam Hata: {len(errors)}\n")
+            f.write(f"False Positives (İnsan yazmış ama model AI sanmış): {len(fps)}\n")
+            f.write(f"False Negatives (AI yazmış ama model İnsan sanmış): {len(fns)}\n\n")
+            
+            f.write("--- ÖRNEK 5 FALSE POSITIVE ---\n")
+            for idx, row in fps.head(5).iterrows():
+                f.write(f"- {row['Metin'][:500]}...\n\n")
+                
+            f.write("--- ÖRNEK 5 FALSE NEGATIVE ---\n")
+            for idx, row in fns.head(5).iterrows():
+                f.write(f"- {row['Metin'][:500]}...\n\n")
+                
+        print(f"  → Error analysis raporu kaydedildi: {save_path}")
+    else:
+        print(f"  -> Error analysis: {len(errors)} hata tespit edildi ({len(fps)} FP, {len(fns)} FN)")

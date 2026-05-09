@@ -1,16 +1,24 @@
 # 📊 Model Performans Metrikleri
 
 ## 1. Lojistik Regresyon (Logistic Regression)
-* **Doğruluk (Accuracy):** %99.14
-* **Kesinlik (Precision - Macro Avg):** %99.14
-* **Duyarlılık (Recall - Macro Avg):** %99.14
-* **F1-Skoru (Macro Avg):** %99.14
+* **Doğruluk (Accuracy):** %99.34
+* **Kesinlik (Precision - Macro Avg):** %99.34
+* **Duyarlılık (Recall - Macro Avg):** %99.34
+* **F1-Skoru (Macro Avg):** %99.34
 
 ## 2. Destek Vektör Makineleri (LinearSVC)
-* **Doğruluk (Accuracy):** %99.72
-* **Kesinlik (Precision - Macro Avg):** %99.72
-* **Duyarlılık (Recall - Macro Avg):** %99.72
-* **F1-Skoru (Macro Avg):** %99.72
+* **Doğruluk (Accuracy):** %99.77
+* **Kesinlik (Precision - Macro Avg):** %99.77
+* **Duyarlılık (Recall - Macro Avg):** %99.77
+* **F1-Skoru (Macro Avg):** %99.77
 
 ## Karşılaştırma Özeti
-SVM, Lojistik Regresyon'u tüm metriklerde açık ara geride bırakmış ve özellikle İnsan elinden çıkan metinlere "Yapay Zeka" deme hatasını (Yanlış Pozitif - False Positive) minimuma indirmiştir.
+SVM, Lojistik Regresyon'u tüm metriklerde geride bırakmış ve özellikle İnsan elinden çıkan metinlere "Yapay Zeka" deme hatasını (Yanlış Pozitif - False Positive) minimuma indirmiştir.
+
+## Önceki Sonuçlarla Karşılaştırma (N-gram + word_tokenize eklenmeden ÖNCE → SONRA)
+| Metrik | LR (Önceki) | LR (Güncel) | SVM (Önceki) | SVM (Güncel) |
+|--------|-------------|-------------|--------------|--------------|
+| Accuracy | %99.14 | %99.34 | %99.72 | %99.77 |
+| Toplam Hata | 840 | 642 | 269 | 228 |
+| False Positives | 267 | 172 | 59 | 42 |
+| False Negatives | 573 | 470 | 210 | 186 |

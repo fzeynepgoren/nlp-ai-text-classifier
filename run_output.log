@@ -1,8 +1,16 @@
-[nltk_data] Error loading stopwords: [Errno 32] Broken pipe
 Veri yükleniyor...
 Dataset boyutu: (487235, 2)
+
+Sınıf Dağılımı:
+  İnsan (0): 305797 (62.8%)
+  AI    (1): 181438 (37.2%)
+
 Preprocessing yapılıyor...
 TF-IDF özellikleri çıkarılıyor...
+Veri stratified olarak bölünüyor (80/20)...
+  Eğitim seti: 389788 örnek
+  Test seti:   97447 örnek
+  Test seti sınıf dağılımı: İnsan=61159, AI=36288
 
 🔹 Logistic Regression eğitiliyor...
 
@@ -11,16 +19,16 @@ Logistic Regression - Classification Report:
 ==================================================
               precision    recall  f1-score   support
 
-         0.0       0.99      1.00      0.99     61112
-         1.0       0.99      0.98      0.99     36335
+         0.0       0.99      1.00      0.99     61159
+         1.0       0.99      0.99      0.99     36288
 
     accuracy                           0.99     97447
    macro avg       0.99      0.99      0.99     97447
 weighted avg       0.99      0.99      0.99     97447
 
 Confusion Matrix:
-[[60845   267]
- [  573 35762]]
+[[60895   264]
+ [  533 35755]]
   → Grafik kaydedildi: results/figures/cm_logistic_regression.png
   → Feature importance grafiği kaydedildi: results/figures/fi_logistic_regression.png
   → Error analysis raporu kaydedildi: results/error_analysis_lr.txt
@@ -32,23 +40,87 @@ SVM - Classification Report:
 ==================================================
               precision    recall  f1-score   support
 
-         0.0       1.00      1.00      1.00     61112
-         1.0       1.00      0.99      1.00     36335
+         0.0       1.00      1.00      1.00     61159
+         1.0       1.00      1.00      1.00     36288
 
     accuracy                           1.00     97447
    macro avg       1.00      1.00      1.00     97447
 weighted avg       1.00      1.00      1.00     97447
 
 Confusion Matrix:
-[[61053    59]
- [  210 36125]]
+[[61122    37]
+ [  164 36124]]
   → Grafik kaydedildi: results/figures/cm_svm.png
   → Feature importance grafiği kaydedildi: results/figures/fi_svm.png
   → Error analysis raporu kaydedildi: results/error_analysis_svm.txt
 
 📊 Model Karşılaştırması:
-  Logistic Regression: 0.9914
-  SVM:                 0.9972
+  Logistic Regression: 0.9918
+  SVM:                 0.9979
   → Grafik kaydedildi: results/figures/model_comparison.png
 
-✅ Tüm grafikler results/figures/ klasörüne, error analysis dosyaları ise results/ klasörüne kaydedildi!
+💾 SVM modeli ve TF-IDF vectorizer kaydedildi (predict.py için).
+
+============================================================
+  5-FOLD STRATIFIED CROSS-VALIDATION (Overfitting Kontrolü)
+============================================================
+
+  Logistic Regression:
+    Fold Skorları : ['0.9940', '0.9928', '0.9927', '0.9920', '0.9928']
+    Ortalama      : 0.9929
+    Std Sapma     : 0.0007
+    Min/Max       : 0.9920 / 0.9940
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/joblib/externals/loky/backend/queues.py", line 159, in _feed
+    obj_ = dumps(obj, reducers=reducers)
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/joblib/externals/loky/backend/reduction.py", line 214, in dumps
+    dump(obj, buf, reducers=reducers, protocol=protocol)
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/joblib/externals/loky/backend/reduction.py", line 207, in dump
+    _LokyPickler(file, reducers=reducers, protocol=protocol).dump(obj)
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/joblib/externals/cloudpickle/cloudpickle.py", line 1313, in dump
+    return super().dump(obj)
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/joblib/_memmapping_reducer.py", line 497, in __call__
+    for dumped_filename in dump(a, filename):
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/joblib/numpy_pickle.py", line 600, in dump
+    NumpyPickler(f, protocol=protocol).dump(value)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pickle.py", line 487, in dump
+    self.save(obj)
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/joblib/numpy_pickle.py", line 392, in save
+    wrapper.write_array(obj, self)
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/joblib/numpy_pickle.py", line 157, in write_array
+    pickler.file_handle.write(chunk.tobytes("C"))
+OSError: [Errno 28] No space left on device
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/yasinsenalpaco/nlp-ai-text-classifier/run.py", line 82, in <module>
+    cross_validate_models(X, y, save_path="results/figures/cross_validation.png")
+  File "/Users/yasinsenalpaco/nlp-ai-text-classifier/src/evaluate_model.py", line 29, in cross_validate_models
+    scores = cross_val_score(model, X, y, cv=cv, scoring='accuracy', n_jobs=-1)
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/sklearn/model_selection/_validation.py", line 684, in cross_val_score
+    cv_results = cross_validate(
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/sklearn/model_selection/_validation.py", line 411, in cross_validate
+    results = parallel(
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/sklearn/utils/parallel.py", line 77, in __call__
+    return super().__call__(iterable_with_config)
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+  File "/Users/yasinsenalpaco/Library/Python/3.9/lib/python/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+_pickle.PicklingError: Could not pickle the task to send it to the workers.

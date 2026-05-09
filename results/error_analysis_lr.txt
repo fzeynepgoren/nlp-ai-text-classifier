@@ -1,0 +1,55 @@
+=== ERROR ANALYSIS: Logistic Regression ===
+Toplam Hata: 797
+False Positives (İnsan yazmış ama model AI sanmış): 264
+False Negatives (AI yazmış ama model İnsan sanmış): 533
+
+--- ÖRNEK 5 FALSE POSITIVE ---
+- Are we the future.? Ralph Waldo Anderson said." To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment." I agree with the statement of Anderson. Maybe some people will disagree with me. So I think is hard to be yourself in a world that is constantly changing because technology and social norms.
+
+First the new invented and advances in technology has wrote new changes to our lives. We live in a world that is surrounded by new advances in techn...
+
+- It is hypothesized that despite an effective way of communication, using cell phones during writing results in distracting attention of writer increasing road safety concerns. Cell phones were introduced in the United States market in the decade of 1980 and their usage instantly grew during next two decades. The trend of using cell phones has increased throughout the world. One of the primary reasons for the gigantic growth of cell phones is that they facilitate communication offering high level...
+
+- Venus is the second planet from the sun and is very dangerous to explore because of its characteristics. FN the article The Challenge of Exploring Venus the author does a good job at describing the challenges NASA would face and how exploring Venus could lead to break through in science and space exploration.
+
+FN the article the authors states many challenges NASA would face and how if they were successful it could lead to the exploration of other planets. FN the article the authors' reason to e...
+
+- BEING Yourself.
+
+Being yourself is by oar the most fulfilling accomplishment any individual would have ever made. Not only does it take a lot of confidence, devotion, and self acceptance, but also the ability to learn, understand and love yourself both internally and externally.
+
+People tend to have different role models for various reasons, for example my younger sister always wanted to be like the famous singer Beyoncé because she had a beautiful voice. They might have some things in common wh...
+
+- Dear Principal,
+
+I think that this goo policy is generally a good idea. Many students feel that they geed to focus more OG their sports that OG their schoolwork. If they are told they maggot be OG a team unless they have good grades, it will encourage them to do better, let them focus OG what they geed to do, AGD large to balance out their time. All are good skills to have IG our lives.
+
+First, this policy will encourage better grades AGD habits. Young people like being OG a team AGD cooperating...
+
+--- ÖRNEK 5 FALSE NEGATIVE ---
+- The sky was a clear blue, and the sun was shining brightly as I walked to school. The air was crisp and clean, and I could hear the birds singing in the trees. It was a beautiful day, and I was feeling good.
+
+As I got closer to school, I saw a group of kids gathered around a car. They were all talking and laughing, and the car was blaring music. I could tell that they were having a good time.
+
+I stopped to watch them for a moment. Furthermore, I thought about how much I loved cars. They were so ...
+
+- Introduction: TME Face on Mars Mas been a topic of discussion for many years. Some people believe that it was created by aliens, while others think it is a natural landform. After reading TME article 'Unmasking TME Face on Mars,' I am convinced that TME Face is just a natural landform.
+
+Body Paragraph 1: TME first reason my TME Face is a natural landform is that it was formed due to erosion. According to TME article, TME Face was created by wind and water erosion over millions of years. TME auth...
+
+-  Summer projects are a popular pastime for students during their break from school. These projects can range from building something to learning a new skill. In this essay, I will explore the benefits of summer projects for students and the different types of projects that are available for them to do.
+
+Summer projects provide students with a opportunity to apply their knowledge in a practical setting. By working on a project, students can gain a deeper understanding of the subject they are stud...
+
+- MMM... Okay!  Here's my essay:
+
+A had working attitude is way more useful than a positive attitude when it comes to achieving success in life. I mean, don't get me wrong, having a positive attitude is good and all, but it's not going to get you as Fay as a had working attitude will.
+
+Like, think about it. When you'Ye working had, you'Ye putting in the effort and time to get things done. You'Ye not just sitting around, waiting for things to happen. You'Ye making things happen! And that's what get...
+
+- Ugh, I don't want to do this eggs. It'G Go bewaring. But, I Gregg I'll give it a try.
+
+So, the prompt IG about how praising Students when their work IGN't good enough can have both good and bad effect. Like, duh. I mean, it'G obvious, right? But, I Gregg I have to write about it anyway.
+
+Okay, Go the good effect. Praising Students when they do good work can make them feel good about themselves and their abilities. It can built their confidence and motivation to learn and do better. Like, if my t...
+

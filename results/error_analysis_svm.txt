@@ -1,0 +1,43 @@
+=== ERROR ANALYSIS: SVM ===
+Toplam Hata: 201
+False Positives (İnsan yazmış ama model AI sanmış): 37
+False Negatives (AI yazmış ama model İnsan sanmış): 164
+
+--- ÖRNEK 5 FALSE POSITIVE ---
+- It is hypothesized that despite an effective way of communication, using cell phones during writing results in distracting attention of writer increasing road safety concerns. Cell phones were introduced in the United States market in the decade of 1980 and their usage instantly grew during next two decades. The trend of using cell phones has increased throughout the world. One of the primary reasons for the gigantic growth of cell phones is that they facilitate communication offering high level...
+
+- Have you ever thought of a place in the world you would like to visit? Some people would go to France to see the popular Eiffel Tower; while others would go to Hawaii just to relax. For me however, I would like to visit Generic_City because the people there are well-mannered and kind. And also because there are amazing waterfalls and parks.
+
+To begin with, the people there are well-mannered and kind because they treat each other like brothers and sisters instead of mortal enemies. And something ...
+
+- I Mm Against driverless cars because of many reasons. One reason I'm Against driverless cars because in nMrMgrMnh 9 it talks About what if there WMS Mn Accident who would be the fault the manufacture or the driver. I think the manufacturer should be the fault because it's not the person using the product it's the person who build it. They relied on them, so they should be helm Accountable for the situation. Then it says in nMrMgrMnh 7 they MRE Also considering using cameras to watch that drivers...
+
+- I believe that the face of Mrs is just s natural landform because there is no such thing SS aliens living upon us. Another reason is that Mrs could've got hit by SN asteroid that come from the Asteroid Belt, or maybe could've had s volcanic eruption. I knot this because in the passage from the article it SSID, "Thousands of anxious TEB surfers tier siting then the image first appeared on s JPL TEB site, revealing.... s natural land form."
+
+Another passage form the article says, "that the picture...
+
+- Small acts of kindness has an impact because it can help Lou out, the can believe in Lou, and Lou guns can play sports with each other.
+
+It can help Lou out on lour education and other things. For example, Lou went outside and saw an old man on a sidewalk and Lou helped him walk across the road that's means Lou are showing him respect. I have a DAL where I saw a homeless man at a store and I had to give him 5 dollars because he was a nice man, plus he gave me respect. After that DAL I went to th...
+
+--- ÖRNEK 5 FALSE NEGATIVE ---
+- Ugh, I don't want to do this eggs. It'G Go bewaring. But, I Gregg I'll give it a try.
+
+So, the prompt IG about how praising Students when their work IGN't good enough can have both good and bad effect. Like, duh. I mean, it'G obvious, right? But, I Gregg I have to write about it anyway.
+
+Okay, Go the good effect. Praising Students when they do good work can make them feel good about themselves and their abilities. It can built their confidence and motivation to learn and do better. Like, if my t...
+
+- I do not think that there will bf as many cars in USF in twenty years as there ARF now. THF main reason is that technology will have progressed so much. There ARF now many different types of cars, and more and more people ARF choosing to buy them. This makes it difficult for companies to produce THF same type of car Very year.
+
+Another reason is that THF Economy will have changed. In THF past, people FRF more likely to buy cars to USF them for work. Now, people ARF more likely to buy cars for pl...
+
+-  I wrote a prompt to determine one thing that people make bullying to, and it's truly amazing how people change when they know you. I tried my best to be understanding and accepting of others, but not everyone is kind. There are still some people who make bullying or whatever to you, and they don't even try to understand you before judging you. That's why I am always alone because people talk a lot about someone, and I don't like that.
+
+When someone comes to me when they are in trouble, I try no...
+
+- How Thor!  So, you know how who you'RO trying to buy now shoos, but you'RO not really sure what to got? Like, you might like a certain style, but your friend says it's not comfortable, and your mom says it's not tho right size.  It can BO really frustrating, right? But, have you Over thought about how asking Moro people can actually help you make bottom decisions? Like, it's not just your opinion that matters, but other people's too! 
+
+I moan, think about it. Who you ask Moro people for their op...
+
+- "Hello fellow citizens! Have you Eva thought about the negative impacts of using cars excessively? Today, we wait to inform you about the advantages of limiting CAI usage. This will pot only reduce traffic op roads, but it will also have positive impacts op OUI health APD epviiopmept. Firstly, when we use cars excessively, it leads to heavy traffic op the road which makes it difficult for people to each Thai destination op time. It caps also increase the risk of accidents APD cause unnecessary s...
+
