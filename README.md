@@ -77,7 +77,7 @@ pip install -r requirements.txt
 
 2. **Tüm Projenin (Pipeline) Çalıştırılması:**
 ```bash
-python run.py
+python -m src.run
 ```
 Bu komut:
 - Veriyi yükler ve sınıf dağılımını gösterir
@@ -91,7 +91,7 @@ Bu komut:
 
 3. **Yeni Metin Tahmini:**
 ```bash
-python predict.py
+python -m src.predict
 ```
 
 Bu script kaydedilmiş model varsa doğrudan yükler; yoksa modeli yeniden eğitip kaydeder.
@@ -112,31 +112,36 @@ project/
 ├── notebooks/
 │   └── exploration.ipynb
 ├── src/
+│   ├── __init__.py
 │   ├── preprocessing.py
 │   ├── feature_extraction.py
 │   ├── train_model.py
-│   └── evaluate_model.py
+│   ├── evaluate_model.py
+│   ├── run.py
+│   └── predict.py
 ├── results/
 │   ├── figures/
+│   │   ├── class_distribution.png
 │   │   ├── cm_logistic_regression.png
 │   │   ├── cm_svm.png
 │   │   ├── cross_validation.png
 │   │   ├── cross_validation.txt
 │   │   ├── fi_logistic_regression.png
 │   │   ├── fi_svm.png
-│   │   └── model_comparison.png
+│   │   ├── model_comparison.png
+│   │   ├── text_length_by_class.png
+│   │   └── text_length_distribution.png
 │   ├── metrics.txt
+│   ├── error_analysis.txt
 │   ├── error_analysis_lr.txt
 │   ├── error_analysis_svm.txt
 │   ├── svm_model.joblib
 │   └── tfidf_vectorizer.joblib
 ├── report/
-│   └── project_report_draft.md
-├── predict.py
-├── run.py
+│   └── project_report.pdf
 ├── requirements.txt
 └── README.md
 ```
 
 ##  Rapor (Report)
-Tartışma parametrelerini de içeren tam proje raporunun PDF kopyası `/report/project_report.pdf` dosyasındadır.
+Proje raporunun PDF kopyası `report/project_report.pdf` konumunda yer almaktadır.
